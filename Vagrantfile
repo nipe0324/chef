@@ -26,7 +26,19 @@ Vagrant.configure(2) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: "192.168.33.10"
+  # config.vm.network "private_network", ip: "192.168.33.10"
+
+  config.vm.define "local-development" do |server|
+    server.vm.network "private_network", ip: "192.168.33.10"
+  end
+
+  config.vm.define "local-fluentd-act" do |server|
+    server.vm.network "private_network", ip: "192.168.33.11"
+  end
+
+  config.vm.define "local-fluentd-sby" do |server|
+    server.vm.network "private_network", ip: "192.168.33.12"
+  end
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on

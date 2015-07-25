@@ -1,0 +1,8 @@
+{
+  "name":        "local fluentd aggregater server (standby)",
+  "environment": "local-development",
+  "run_list": [
+    "role[base]",
+    "role[fluentd]"
+  ]
+}

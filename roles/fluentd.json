@@ -1,0 +1,10 @@
+{
+  "name": "fluentd",
+  "description": "Fluentd Aggregator",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "run_list": [
+    "recipe[td-agent]",
+    "recipe[td-agent-server]"
+  ]
+}
