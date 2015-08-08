@@ -3,6 +3,15 @@
   "chef_type": "role",
   "json_class": "Chef::Role",
   "run_list": [
-    "recipe[postgresql]"
-  ]
+    "recipe[postgresql::server]"
+  ],
+	"default_attributes": {
+		"postgresql": {
+			"version": "9.1",
+			"enable_pgdg_yum" : true,
+			"password": {
+			  "postgres": "password123"
+			}
+		}
+	}
 }
